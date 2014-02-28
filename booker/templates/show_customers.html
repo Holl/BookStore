@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<html>
+<head></head>
+<body>
+
+	{% for customer in customers %}
+	<h2>Name: {{customer.name}}</h2>
+		<h3>Owned Book: {{customer.book}}</h3>
+		<h4>Personal Message: {{customer.message}}</h4>
+	<br>
+	{% endfor %}
+</body>
+</html>

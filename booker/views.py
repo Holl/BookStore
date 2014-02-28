@@ -54,14 +54,22 @@ def edit_book(request, book_id):
     data = {"book": book, "book_form": form}
     return render(request, "edit_book.html", data)
 
-def add_owner(request, book_id):
-	book = Book.objects.get(id=book_id)
-	if request.method == "POST":
-		form = BookForm(request.POST, instance=book)
+def add_owner(request):
+    if request.method == "POST":
+        form = CustomerForm(request.POST)
         if form.is_valid():
             if form.save():
                 return redirect("/show_books/")
-            else:
-            	form = BookForm()
-	data = {"book": book, "book_form": form}
-	return render(request, "edit_book.html", data)
+    else:
+        form = CustomerForm()
+    data = {"customer_form": form}
+    return render(request, "add_owner.html", data)
+
+def show_customers(request):
+	dataums= Book.objects.all()
+	datos = Customer.objects.all()
+
+	data = {"books": dataums, "customers": datos}
+
+	return render(request, "show_customers.html", data)
+

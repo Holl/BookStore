@@ -17,6 +17,8 @@ urlpatterns = patterns('',
 
     url('^show_books/(?P<book_id>\w+)/$', 'booker.views.show_book', name='show_book'),
 
-    url('^add_owner/(?P<book_id>\w+)/$', 'booker.views.add_owner', name='add_owner')
+    url('^add_owner/$', 'booker.views.add_owner', name='add_owner'),
+
+    url('^show_customers/$', 'booker.views.show_customers', name='show_customers'),
 
 )
