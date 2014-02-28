@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<html>
+<head></head>
+<body>
+	<h2>Title: {{book.title}}</h2>
+		<h3>Author: {{book.author}}</h3>
+		<h3>Genre: {{book.genre}}</h3>
+		<h4>Owner: {{book.customer}}</h4>
+	<br>
+	<a href='{% url "edit_book" book.id %}'>Edit Info</a>
+	<a href='{% url "add_owner" book.id %}'>Add Owner</a>
+</body>
+</html>

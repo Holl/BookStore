@@ -1,0 +1,14 @@
+</head>
+<form method="POST"> 
+	<ol>
+	{% csrf_token %}
+	{% for field in book_form %}
+		<li>
+			{{field.errors}}
+			{{field.label_tag}}
+			{{field}}
+		</li>
+	{% endfor %}
+	</ol>
+	<input type="submit" value="Submit Answer" />
+</form>
