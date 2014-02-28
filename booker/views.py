@@ -73,3 +73,14 @@ def show_customers(request):
 
 	return render(request, "show_customers.html", data)
 
+def add_current_customer(request, book_id):
+
+	book = Book.objects.get(id=book_id)
+
+	dataums= Customer.objects.all()
+
+	data = {"customers": dataums, "book": book}
+
+	return render (request, "add_current_customer.html", data)
+
+

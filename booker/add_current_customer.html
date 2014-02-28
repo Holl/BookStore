@@ -1,0 +1,11 @@
+<html>
+<head></head>
+<body>
+	<h1>Owner:</h1>
+	{% for customer in customers %}
+	<h2>Name: {{customer.name}}</h2>
+	<input type="submit" value ="Add Book"/>
+	<br>
+	{% endfor %}
+</body>
+</html>

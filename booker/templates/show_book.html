@@ -13,6 +13,9 @@
 		</ul>
 	<br>
 	<a href='{% url "edit_book" book.id %}'>Edit Info</a>
-	<a href='{% url "add_owner" %}'>Add Owner</a>
+	<a href='{% url "add_owner" %}'>Add New Owner</a>
+	<a href='{% url "add_current_customer" book.id %}'>Add Current Owner</a>
+	<a href='{% url "show_books" %}'>To List</a>
+
 </body>
 </html>

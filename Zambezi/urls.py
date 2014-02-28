@@ -21,4 +21,6 @@ urlpatterns = patterns('',
 
     url('^show_customers/$', 'booker.views.show_customers', name='show_customers'),
 
+    url('^add_current_customer/(?P<book_id>\w+)/$', 'booker.views.add_current_customer', name='add_current_customer')
+
 )

@@ -5,8 +5,13 @@
 
 	{% for customer in customers %}
 	<h2>Name: {{customer.name}}</h2>
-		<h3>Owned Book: {{customer.book}}</h3>
-		<h4>Personal Message: {{customer.message}}</h4>
+	<h3>Owned Books:</h3>
+	<ul>
+		{% for book in customer.book.all %}
+			<li>{{book.title}}</li>
+		{% endfor %}
+	</ul>
+	<h4>Personal Message: {{customer.message}}</h4>
 	<br>
 	{% endfor %}
 </body>
